@@ -21,7 +21,7 @@ contract LotteryContract {
 
     function EnterPlayer() public payable {
         require(
-            msg.sender == Manager,
+            msg.sender != Manager,
             "Manager is not Authorozed to Participate"
         );
 
@@ -30,5 +30,24 @@ contract LotteryContract {
         require(msg.value >= 1 ether, "Minimum About required to participate");
 
         palyer.push(payable(msg.sender));
+    }
+
+    function RandomnumberGenerator() private view returns (uint256) {
+        return
+            uint256(
+                sha256(abi.encodePacked(block.difficulty, block.number, palyer))
+            );
+    }
+
+    function PickWinnerInLottery() public {
+        require(msg.sender == Manager, "Only mananger can pickup the winner");
+        uint256 index = RandomnumberGenerator() % palyer.length;
+        address contractAddress = address(this);
+        palyer[index].transfer(contractAddress.balance);
+        palyer = new address payable[](0);
+    }
+
+    function getPlayer() public view returns (address payable[] memory) {
+        return palyer;
     }
 }

@@ -31,6 +31,26 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "PickWinnerInLottery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPlayer",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -78,11 +98,11 @@
 	},
 	"sources": {
 		"contracts/Lottery.sol": {
-			"keccak256": "0x987007fd460814b80017450f2a64f9ca13d5e92eb10649ecf5884ff3ac9a8c96",
+			"keccak256": "0x1f71f76816765662b05179f892c1075bc63b865556497f30685be84ccfec2352",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e076f17124497940787a7cc6d7476cb1448a07ead89da5383d11de05bbdfe522",
-				"dweb:/ipfs/QmamLeNBCzS2dzyHMyuQksmCaG3L4RLq3iZiuVTmKAbk1p"
+				"bzz-raw://13a2daa9ffec98d423c897cb3c837869e91486b4bea3a53b4c51bfce8b3862e4",
+				"dweb:/ipfs/QmVxvH1UmgqJqds2ouZYi9rsHQCQhDMZtYynKymR2oA6vw"
 			]
 		}
 	},
